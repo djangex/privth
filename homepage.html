@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" type=text/css href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+	<title>Page: {{nomor}}</title>
+</head>
+<body>
+	<nav class="navbar navbar-light bg-light">
+		<span class="navbar-brand mb-0 h1">Page: {{nomor}}</span>
+	</nav>
+	
+	<div class="container">
+		
+		{% for item in items %}
+		<div class="pb-4">
+			<div class="card">
+				<img class="card-img-top" src="{{item['thumb']}}"/>
+				<div class="card-body">
+					<a class="card-text" href="/view/{{item['target']}}">{{item['judul']}}</a>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	
+		<div style="text-align:center;">
+			<a style="width:45%;" href="/page/{{nomor+1}}" type="button" class="btn btn-primary"><- Back: {{nomor-1}}</a>
+			<a style="width:45%;" href="/page/{{nomor+1}}" type="button" class="btn btn-success">Next: {{nomor+1}} -></a>
+		</div>
+		<!--<div id="gt-mordadam-43217984"></div>-->
+	</div>
+	<script type="text/javascript">
+		window.gtranslateSettings = window.gtranslateSettings || {};
+		window.gtranslateSettings["43217984"] = {
+			default_language: "th", // Set Default Language
+			languages: [
+				"en","id"
+			], // Languages Selected
+			wrapper_selector: "#gt-mordadam-43217984", // Element Selected
+			native_language_names: 1, // Set All Languages ​​Should Be Native Language From The Beginning
+			flag_style: "2d", // Flag Style
+			flag_size: 0, // Flag Size
+			horizontal_position: "inline", // Set Horizontal Position
+			flags_location: "flags\/", // Set Flags Location
+		};
+	</script>
+	<script src="{{ url_for('static', filename='js/gt.min.js') }}" data-gt-widget-id="43217984"></script>
+</body>
+</html>
